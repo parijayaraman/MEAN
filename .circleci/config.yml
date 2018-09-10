@@ -14,17 +14,13 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
-      - run: mkdir ~/junit
-      - run:
-          command: mocha test --reporter mocha-junit-reporter
-          environment:
-            MOCHA_FILE: junit/test-results.xml
-          when: always
       - run:     
           name: test
-          command: npm test
+          command: |
+          mkdir ~/test-output
+          npm test
       - store_artifacts:
-          path: ~/junit
+          path: ~/test-output
           prefix: E2E-tests
       - store_test_results:
-          path: ~/junit
+          path: ~/test-output
