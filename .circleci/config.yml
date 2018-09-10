@@ -16,9 +16,7 @@ jobs:
             - ./node_modules
       - run:     
           name: test
-          command: |
-          mkdir ~/test-output
-          npm test
+          command:npm test
       - store_artifacts:
           path: ~/test-output
           prefix: E2E-tests
