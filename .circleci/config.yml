@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: install-npm-wee
-          command: sudo npm install node-sass -g 
+          command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
