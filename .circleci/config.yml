@@ -18,7 +18,7 @@ jobs:
           name: test
           command: npm test
       - store_artifacts:
-          path: test-results.xml
+          path: test-results
           prefix: E2E-tests
       - store_test_results:
-          path: test-results.xml
+          path: test-results
