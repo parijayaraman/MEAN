@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/mean-starter
     docker:
-      - image: circleci/node:10-stretch-browsers
+      - image: circleci/node:8.11-stretch-browsers
       - image: mongo:latest
     steps:
       - checkout
